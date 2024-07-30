@@ -1,0 +1,18 @@
+services:
+  mariadb:
+    container_name: beer_mariadb
+    image: 'mariadb:latest'
+    environment:
+      - 'MARIADB_DATABASE=mydatabase'
+      - 'MARIADB_PASSWORD=secret'
+      - 'MARIADB_ROOT_PASSWORD=verysecret'
+      - 'MARIADB_USER=myuser'
+    ports:
+      - '3306:3306'
+  mailhog:
+    container_name: beer_mailhog
+    image: registry.hub.docker.com/mailhog/mailhog
+    platform: linux/amd64
+    ports:
+      - '8025:8025'
+      - '1025:1025'
