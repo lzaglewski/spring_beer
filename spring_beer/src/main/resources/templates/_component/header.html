@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header(title)">
+    <title th:replace="${title}">header</title>
+    <link th:href="@{/dist/assets/admin/js/admin.vendor.css}" rel="stylesheet"/>
+    <link th:href="@{/dist/assets/admin/js/admin.css}" rel="stylesheet"/>
+</head>
+</html>

@@ -1,0 +1,41 @@
+<footer class="footer">
+    <div class="container-fluid d-flex justify-content-between">
+        <nav class="pull-left">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a 
+                        class="nav-link" 
+                        href="#" 
+                        th:text="#{component.footer.contact}" 
+                        th:title="#{component.footer.contact}"
+                    ></a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                        class="nav-link" 
+                        href="#" 
+                        th:text="#{component.footer.help}"
+                        th:title="#{component.footer.help}"
+                    ></a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                        class="nav-link" 
+                        href="#" 
+                        th:text="#{component.footer.licences}"
+                        th:title="#{component.footer.licences}"
+                    ></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span>,
+            <span th:text="#{component.footer.madeWith}"></span>
+            <i class="fa-solid fa-heart text-danger"></i>
+        </div>
+        <div>
+            <span th:text="#{component.footer.distributedBy}"></span>
+            <a target="_blank" href="https://oskarwegner.pl/" title="Oskar Wegner">Oskar Wegner</a>.
+        </div>
+    </div>
+</footer>

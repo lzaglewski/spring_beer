@@ -25,6 +25,7 @@ dependencies {
     implementation 'org.springframework.session:spring-session-core'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

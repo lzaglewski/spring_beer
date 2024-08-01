@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_component/header :: header(~{::title})}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
+<h1 th:fragment="header">Homepage</h1>
+
+<nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
+    <ol class="breadcrumbs">
+        <li class="nav-item">
+            <a th:href="@{/}" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </li>
+    </ol>
+</nav>
+
+<div th:fragment="bodyContent" class="body">
+    <p th:text="${name}">Default name</p>
+</div>
+
+</body>
+</html>

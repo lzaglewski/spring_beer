@@ -1,0 +1,84 @@
+<div class="sidebar" data-background-color="dark">
+    <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+            <a th:href="@{'/'}" class="logo">
+                More <i class="fa-solid fa-heart text-danger ms-2"></i>
+            </a>
+            <button class="navbar-toggler sidenav-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <i class="gg-menu-right"></i>
+              </span>
+            </button>
+            <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                <button class="btn btn-toggle sidenav-toggler">
+                    <i class="gg-menu-left"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End Logo Header -->
+    </div>
+    <div class="scroll-wrapper sidebar-wrapper scrollbar scrollbar-inner" style="position: relative;">
+        <div class="sidebar-wrapper scrollbar scrollbar-inner scroll-content"
+             style="height: 807px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
+            <div class="sidebar-content">
+                <ul class="nav nav-secondary">
+                    <li class="nav-item">
+                        <a th:href="@{'/'}" class="collapsed" aria-expanded="false">
+                            <i class="fas fa-home"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-section">
+                        <span class="sidebar-mini-icon">
+                          <i class="fa fa-ellipsis-h"></i>
+                        </span>
+                        <h4 class="text-section">Section</h4>
+                    </li>
+
+                    <li class="nav-item submenu">
+                        <a data-bs-toggle="collapse" href="#aside-member">
+                            <i class="fas fa-pen-square"></i>
+                            <p>Groups</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="aside-member">
+                            <ul class="nav nav-collapse">
+                                <li class="">
+                                <a th:href="@{/groups/list}">
+                                    <span class="sub-item">List</span>
+                                </a>
+                                </li>
+                                <li class="">
+                                    <a th:href="@{/groups/new}">
+                                        <span class="sub-item">Create</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="scroll-element scroll-x">
+        <div class="scroll-element_outer">
+            <div class="scroll-element_size"></div>
+            <div class="scroll-element_track"></div>
+            <div class="scroll-bar" style="width: 0px; left: 0px;"></div>
+        </div>
+    </div>
+
+    <div class="scroll-element scroll-y">
+        <div class="scroll-element_outer">
+            <div class="scroll-element_size"></div>
+            <div class="scroll-element_track"></div>
+            <div class="scroll-bar" style="height: 0px;"></div>
+        </div>
+    </div>
+</div>
+</div>

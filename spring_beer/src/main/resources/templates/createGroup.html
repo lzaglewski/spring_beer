@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_component/header :: header(~{::title})}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
+<h1 th:fragment="header">Create Group</h1>
+
+<nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
+    <ol class="breadcrumbs">
+        <li class="nav-item">
+            <a th:href="@{/}" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </li>
+    </ol>
+</nav>
+
+<div th:fragment="bodyContent" class="body">
+    <form th:action="@{/groups}" th:object="${group}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" th:field="*{description}" required></textarea>
+        </div>
+        <div>
+            <button type="submit">Create Group</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

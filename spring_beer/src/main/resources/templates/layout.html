@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:lang="${#locale}" xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="wrapper(bodyContent, breadcrumbs, header)">
+<div class="wrapper">
+    <div th:insert="~{_component/aside}"></div>
+
+    <main class="main-panel">
+        <div class="main-header d-lg-none">
+            <div class="main-header-logo">
+                <div class="logo-header" data-background-color="dark"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="page-inner">
+                <div class="page-header">
+                    <th:block th:replace="${header}" th:text="${header}">Homepage Header</th:block>
+                    <th:block th:replace="${breadcrumbs}"></th:block>
+                </div>
+
+                <th:block th:insert="~{_component/flashes}"></th:block>
+
+                <th:block th:replace="${bodyContent}"></th:block>
+
+            </div>
+
+            <footer th:insert="~{_component/footer}"></footer>
+        </div>
+    </main>
+</div>
+
+<script th:src="@{/dist/assets/admin/js/admin.vendor.js}"></script>
+<script th:src="@{/dist/assets/admin/js/admin.js}"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_component/header :: header(~{::title})}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
+<h1 th:fragment="header">Homepage</h1>
+
+<nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
+    <ol class="breadcrumbs">
+        <li class="nav-item">
+            <a th:href="@{/}" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </li>
+    </ol>
+</nav>
+
+<div th:fragment="bodyContent" class="body">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Admin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="group : ${groups}">
+            <td th:text="${group.id}">1</td>
+            <td th:text="${group.name}">Group Name</td>
+            <td th:text="${group.description}">Group Description</td>
+            <td th:text="${group.admin.username}">Admin Username</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
