@@ -3,7 +3,7 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a th:href="@{'/'}" class="logo">
-                More <i class="fa-solid fa-heart text-danger ms-2"></i>
+                Beer <i class="fa-solid fa-heart text-danger ms-2"></i>
             </a>
             <button class="navbar-toggler sidenav-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +41,12 @@
                     </li>
 
                     <li class="nav-item submenu">
-                        <a data-bs-toggle="collapse" href="#aside-member">
+                        <a data-bs-toggle="collapse" href="#aside-groups">
                             <i class="fas fa-pen-square"></i>
                             <p>Groups</p>
                             <span class="caret"></span>
                         </a>
-                        <div class="collapse" id="aside-member">
+                        <div class="collapse" id="aside-groups">
                             <ul class="nav nav-collapse">
                                 <li class="">
                                 <a th:href="@{/groups/list}">
@@ -55,6 +55,27 @@
                                 </li>
                                 <li class="">
                                     <a th:href="@{/groups/new}">
+                                        <span class="sub-item">Create</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item submenu">
+                        <a data-bs-toggle="collapse" href="#aside-events">
+                            <i class="fas fa-pen-square"></i>
+                            <p>Events</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="aside-events">
+                            <ul class="nav nav-collapse">
+                                <li class="">
+                                    <a th:href="@{/events}">
+                                        <span class="sub-item">List</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a th:href="@{/events/new}">
                                         <span class="sub-item">Create</span>
                                     </a>
                                 </li>

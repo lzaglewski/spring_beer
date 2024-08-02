@@ -1,7 +1,6 @@
 package com.spring.beer.app.service;
 
 import com.spring.beer.dom.Event;
-import com.spring.beer.dom.Group;
 import com.spring.beer.dom.repository.EventRepository;
 import com.spring.beer.dom.repository.GroupRepository;
 import org.springframework.stereotype.Service;
@@ -17,9 +16,7 @@ public class EventService {
         this.eventRepository = eventRepository;
     }
 
-    public void createEvent(Long groupId, Event event) {
-        Group group = groupRepository.findById(groupId).orElseThrow();
-        event.setGroup(group);
+    public void createEvent(Event event) {
         eventRepository.save(event);
     }
 
@@ -37,5 +34,9 @@ public class EventService {
 
     public void deleteEvent(Long groupId, Long eventId) {
         eventRepository.deleteById(eventId);
+    }
+
+    public Object getAllEvents(Long groupId) {
+        return eventRepository.findAllByGroupId(groupId);
     }
 }

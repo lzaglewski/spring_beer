@@ -8,37 +8,27 @@
     <title>Document</title>
 </head>
 <body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
-<h1 th:fragment="header">Homepage</h1>
+<h1 th:fragment="header">Event Details</h1>
 
 <nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
     <ol class="breadcrumbs">
         <li class="nav-item">
-            <a th:href="@{/}" title="Home">
+            <a th:href="@{/static}" title="Home">
                 <i class="fa-solid fa-house"></i>
             </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/groups/{groupId}/events/{eventId}}" title="Event Details">Event Details</a>
         </li>
     </ol>
 </nav>
 
 <div th:fragment="bodyContent" class="body">
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Admin</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="group : ${groups}">
-            <td th:text="${group.id}">1</td>
-            <td th:text="${group.name}">Group Name</td>
-            <td th:text="${group.description}">Group Description</td>
-            <td th:text="${group.admin.username}">Admin Username</td>
-        </tr>
-        </tbody>
-    </table>
+    <div>
+        <h2 th:text="${event.name}">Event Name</h2>
+        <p th:text="${event.description}">Event Description</p>
+        <p th:text="${event.date}">Event Date</p>
+    </div>
 </div>
 
 </body>

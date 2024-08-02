@@ -8,12 +8,12 @@
     <title>Document</title>
 </head>
 <body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
-<h1 th:fragment="header">Homepage</h1>
+<h1 th:fragment="header">Create Group</h1>
 
 <nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
     <ol class="breadcrumbs">
         <li class="nav-item">
-            <a th:href="@{/}" title="Home">
+            <a th:href="@{/static}" title="Home">
                 <i class="fa-solid fa-house"></i>
             </a>
         </li>
@@ -21,7 +21,19 @@
 </nav>
 
 <div th:fragment="bodyContent" class="body">
-    <p th:text="${name}">Default name</p>
+    <form th:action="@{/templates/groups}" th:object="${group}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" type="text" id="name" th:field="*{name}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" th:field="*{description}" required></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-secondary" type="submit">Create Group</button>
+        </div>
+    </form>
 </div>
 
 </body>

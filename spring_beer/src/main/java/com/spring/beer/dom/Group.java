@@ -2,6 +2,7 @@ package com.spring.beer.dom;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -15,6 +16,8 @@ public class Group {
 
     private String name;
     private String description;
+
+    private String hash;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -65,6 +68,22 @@ public class Group {
 
     public void setAdmin(User admin) {
         this.admin = admin;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public Set<GroupMembership> getGroupMemberships() {
+        return groupMemberships;
+    }
+
+    public void setGroupMemberships(Set<GroupMembership> groupMemberships) {
+        this.groupMemberships = groupMemberships;
     }
 
     @Override

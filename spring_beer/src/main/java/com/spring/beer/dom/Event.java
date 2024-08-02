@@ -1,6 +1,8 @@
 package com.spring.beer.dom;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.NonNull;
 
 import java.util.Date;
 import java.util.Set;
@@ -19,7 +21,9 @@ public class Event {
     private String name;
     private String description;
 
+    @NonNull
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @OneToMany(mappedBy = "event")

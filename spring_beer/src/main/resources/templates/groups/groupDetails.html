@@ -8,12 +8,12 @@
     <title>Document</title>
 </head>
 <body th:replace="~{layout :: wrapper(~{::bodyContent}, ~{::breadcrumbs}, ~{::header})}">
-<h1 th:fragment="header">Create Group</h1>
+<h1 th:fragment="header">Homepage</h1>
 
 <nav aria-label="{{ 'component.breadcrumbs.label'|trans }}" th:fragment="breadcrumbs">
     <ol class="breadcrumbs">
         <li class="nav-item">
-            <a th:href="@{/}" title="Home">
+            <a th:href="@{/static}" title="Home">
                 <i class="fa-solid fa-house"></i>
             </a>
         </li>
@@ -21,19 +21,12 @@
 </nav>
 
 <div th:fragment="bodyContent" class="body">
-    <form th:action="@{/groups}" th:object="${group}" method="post">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" th:field="*{name}" required>
-        </div>
-        <div>
-            <label for="description">Description:</label>
-            <textarea id="description" th:field="*{description}" required></textarea>
-        </div>
-        <div>
-            <button type="submit">Create Group</button>
-        </div>
-    </form>
+    <p th:text="${group.name}">name</p>
+    <p th:text="${group.description}">description</p>
+    <p th:text="${group.admin.username}">admin</p>
+    <a th:href="@{/groups/{groupId}/generateHash(groupId=${group.id})}">Generate hash</a>
+    <br>
+    <a th:href="@{/groups/join/{hash}(hash=${group.hash})}">Join Group link</a>
 </div>
 
 </body>
